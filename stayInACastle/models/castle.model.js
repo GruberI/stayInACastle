@@ -4,9 +4,12 @@ const { Schema, model } = mongoose;
 const castleSchema = new Schema(
     {
       name: String,
+      country: String,
       address: String,
-      image: String, //?ask lloyd
-      link: String
+      image: String,
+      capacity: Number,
+      link: String,
+      description: String
     },
     {
       timestamps: true,
