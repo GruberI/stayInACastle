@@ -92,6 +92,7 @@
 
   .about-div {
     width: 30%;
+    height: 40%;
   }
 
   .index-h3 {
@@ -104,9 +105,42 @@
     text-align: center;
   }
 
+  .amenities-div {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+
+  .amenities-card {
+    border: 1px solid #3d5e6a;
+    margin: 20px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .amenities-img {
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .amenities-p {
+    font-family: 'PT Serif', serif;
+    margin-bottom: 0;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  footer {
+    background-color: rgb(243, 246, 249);
+  }
+
   .footer {
     margin: auto;
-    width: 60%;
+    width: 50%;
+    padding-top: 5px;
   }
 
   .footer-text {
@@ -114,7 +148,7 @@
     width: 90%;
     display: flex;
     justify-content: space-around;
-    padding-bottom: 25px;
+    padding-bottom: 20px;
   }
 
   .footer-a {
