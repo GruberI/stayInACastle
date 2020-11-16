@@ -11,7 +11,10 @@ const path         = require('path');
 
 
 mongoose
-  .connect('mongodb://localhost/stayinacastle', {useNewUrlParser: true})
+  .connect('mongodb://localhost/stayinacastle', {
+    useCreateIndex: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -53,6 +56,7 @@ app.locals.title = 'Stay in a Castle';
 
 const index = require('./routes/index');
 app.use('/', index);
-
+const router = require("./routes/auth.routes");
+app.use("/", router); 
 
 module.exports = app;
