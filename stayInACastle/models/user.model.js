@@ -3,8 +3,8 @@ const { Schema, model } = mongoose;
 
 const userSchema = new Schema(
     {
-      email: String,
-      passwordHash: String,
+      username: String,
+      password: String,
     },
     {
       timestamps: true,
