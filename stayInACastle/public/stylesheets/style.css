@@ -137,9 +137,9 @@ body {
 
   footer {
     background-color: rgb(243, 246, 249);
-    position: absolute;
     bottom: 0;
     width: 100%;
+    position: fixed;
   }
 
   .footer {
