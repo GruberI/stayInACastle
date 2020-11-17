@@ -1,7 +1,6 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
-
+.body-div {
+  position: relative;
+}
  .nav-bar {
     background-color: #3d5e6a;
     overflow: hidden;
@@ -10,9 +9,6 @@ body {
     padding: 0;
   }
 
-
-/*# sourceMappingURL=style.css.map */
-=======
   #signup-a {
     padding-right: 50px;
   }
@@ -31,7 +27,7 @@ body {
   }
 
   .search-bar {
-    width: 60%;
+    width: 50%;
     background-color: rgba(208, 208, 208, .7);
     border-radius: 8px;
     color: black;  
@@ -54,15 +50,19 @@ body {
     margin: 0;
   }
 
-  #countries {
-    width: 40%;
+  .index-page {
+    position: relative;
+  }
+
+  #country {
+    width: 50%;
     padding: 10px;
     border: none;
     font-family: 'PT Serif', serif;
   }
 
   #capacity {
-    width: 40%;
+    width: 50%;
     border: none;
     padding-left: 5px;
     font-family: 'PT Serif', serif;
@@ -138,11 +138,203 @@ body {
     padding-top: 5px;
   }
 
+  /* login page */
+
+  .login-container {
+    font-family: 'PT Serif', serif;
+    margin: auto;
+    width: 40%;
+    height: 60%;
+    padding: 10px;
+  }
+
+  .login-container h2 {
+    text-align: center;
+    margin-top: 15%;
+    padding-bottom: 10px;
+  }
+
+  .login-btn {
+    border: none;
+    border-radius: 3px;
+    background-color:#264c5a;
+    color: rgb(238, 238, 238);
+    margin-top: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .login-input {
+    width: 80%;
+    margin-top: 5px;
+    margin: 10px;
+    margin-left: 0;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+    padding: 5px;
+  }
+
+  .login-form-div {
+    width: 80%;
+    margin-left: 20%;
+  }
+
+  /* sign up page */
+
+  .signup-container {
+    font-family: 'PT Serif', serif;
+    margin: auto;
+    width: 40%;
+    height: 60%;
+    padding: 10px;
+  }
+
+  .signup-container h2 {
+    text-align: center;
+    margin-top: 15%;
+    padding-bottom: 10px;
+  }
+
+  .signup-btn {
+    border: none;
+    border-radius: 3px;
+    background-color:#264c5a;
+    color: rgb(238, 238, 238);
+    margin-top: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .signup-form-div {
+    width: 80%;
+    margin-left: 20%;
+  }
+
+  /* user profile page */
+  .up-main-div {
+    font-family: 'PT Serif', serif;
+    margin: auto;
+    width: 90%;
+    padding-top: 30px;
+  }
+
+  .up-header-text {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 15px;
+  }
+
+  .up-header-text h4 {
+    padding-top: 15px;
+  }
+
+  .up-search-bar {
+    text-align: center;
+  }
+
+  #up-country {
+    width: 40%;
+    padding: 6px;
+  }
+
+  #up-capacity {
+    width: 40%;
+    padding: 6px;
+  }
+
+  .up-search-btn {
+    border: none;
+    border-radius: 3px;
+    background-color:#264c5a;
+    color: rgb(238, 238, 238);
+    margin-top: 10px;
+    margin-left: 0;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .user-favorites-div h3 {
+    padding-top: 30px;
+    padding-bottom: 5px;
+    text-align: center;
+  }
+
+  .favorites-div {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+  }
+
+  .favorites-card {
+    width: 30%;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #264c5a;
+  }
+
+  .favorites-card-div {
+    background-color: white;
+    margin-top: 5px;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .favorites-title {
+    width: 95%;
+    height: 50px;
+  }
+
+  .favorites-img {
+    object-fit: cover;
+  }
+
+  .favorites-btn {
+    border: none;
+    border-radius: 3px;
+    background-color: rgba(70, 102, 113, .9);
+    color: rgb(238, 238, 238);
+    margin-top: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .favorites-a {
+    color: white;
+  }
+
+  .up-alt-a {
+    padding-top: 15px;
+    padding-bottom: 15px;;
+    text-align: center;
+  }
+
+  .alt-a {
+    color: #264c5a;
+    font-size: 18px;
+    text-decoration: underline;
+  }
+
   footer {
     background-color: rgb(243, 246, 249);
     bottom: 0;
     width: 100%;
-    position: fixed;
+  }
+
+  .index-footer{
+    background-color: rgb(243, 246, 249);
+    bottom: 0;
+    width: 100%;
+    position: absolute;
   }
 
   .footer {

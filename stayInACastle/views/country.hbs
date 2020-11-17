@@ -1,14 +1,19 @@
 
-{{#each castlesFromDB }}
+<div class="country-first-div">
+        {{#each castlesFromDB }}
         <h1>{{this.name}}</h1>
         <p>{{this.address}}</p>
 
-        
-        <a href= "/castles/{{_id}}/edit">Edit Castle</a>
+
+        <a href="/castles/{{_id}}/edit">Edit Castle</a>
         <form action="/castles/{{_id}}/delete" method="POST">
-        <button>Delete</button>
+                <button>Delete</button>
         </form>
         <button><a href="/castle/{{_id}}" id="view-castle">View this Castle</a></button>
 
-{{/each}}
+        {{/each}}
+</div>
 
+<div class="country-second-div">
+
+</div>
