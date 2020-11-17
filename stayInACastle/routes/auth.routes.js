@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const router = new Router;
 const User = require("../models/user.model");
+const Castle = require("../models/castle.model")
 const bcrypt = require("bcrypt");
 const saltRounds = 11;
 
@@ -110,6 +111,18 @@ router.get('/logout', (req, res) => {
     res.redirect('/');
   });
 
+  //list by country
+  router.get("/country", (req, res) => {
+    const { country } = req.query
+
+    Castle.find({ country })
+      .then((castlesFromDB) => {
+        console.log("castles are:", castlesFromDB)
+        res.render("country", { castlesFromDB })
+      }
+      )
+      .catch((error) => `Error while fetching countries: ${error}`);
+  });
 
 
 module.exports = router;
