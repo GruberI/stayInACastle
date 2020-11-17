@@ -119,7 +119,6 @@ router.get('/logout', (req, res) => {
   });
 
 
-
   //Get route for individul castles
 router.get("/castle/:id", (req, res) => {
     const { id } = req.params
