@@ -3,9 +3,9 @@
         <img class="index-img" src="/images/test-castle.jpg" alt="test-castle">
         <div class="search-bar">
             <div class="searchbar-text">
-                <form class="index-form" action="/search" method="POST">
+                <form class="index-form" action="/country" method="GET">
                     {{!-- <label for="countries">Select a country:</label> --}}
-                    <select name="countries" id="countries">
+                    <select name="country" id="country">
                         <option>Select a Country </option>
                         <option value="uk">United Kingdom</option>
                         <option value="ireland">Ireland</option>
@@ -21,7 +21,7 @@
                         <option value="three">3</option>
                         <option value="four">4</option>
                     </select>
-                    <button type="submit" name="search-button" class="search-btn">Search</button>
+                    <button type="submit" class="search-btn">Search</button>
                 </form>
             </div>
         </div>
