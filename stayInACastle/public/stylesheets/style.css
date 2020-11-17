@@ -1,6 +1,6 @@
 body {
-  font-family: 'PT Serif', serif;
- }
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
  .nav-bar {
     background-color: #3d5e6a;
@@ -10,6 +10,9 @@ body {
     padding: 0;
   }
 
+
+/*# sourceMappingURL=style.css.map */
+=======
   #signup-a {
     padding-right: 50px;
   }
@@ -158,4 +161,4 @@ body {
 
   .footer-a {
     color: rgb(140, 140, 140);
-  }
+

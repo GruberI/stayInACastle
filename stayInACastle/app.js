@@ -63,4 +63,8 @@ app.use('/', index);
 const router = require("./routes/auth.routes");
 app.use("/", router); 
 
+const castles = require("./routes/castles.routes");
+app.use("/", castles); 
+
+
 module.exports = app;
