@@ -145,5 +145,4 @@ router.get("/castle/:id", (req, res) => {
     .catch((error) => `Error while adding castle to favorites: ${error}`);
 });
 
-
 module.exports = router;
