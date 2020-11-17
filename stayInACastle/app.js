@@ -8,13 +8,14 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
-
+const mongoURI     = 'mongodb://localhost/stayinacastle'
 
 mongoose
-  .connect('mongodb://localhost/stayinacastle', {
+  .connect(process.env.MONGO_ATLAS_URI || mongoURI , {
     useCreateIndex: true,
     useNewUrlParser: true,
-    useUnifiedTopology: true})
+    useUnifiedTopology: true
+  })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })

@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const Castle = require("../models/castle.model");
 
 const DB_NAME = "stayinacastle";
-
-mongoose.connect(`mongodb://localhost/${DB_NAME}`, {
+mongoose
+  .connect(`mongodb://localhost/${DB_NAME}`, {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -28,4 +28,4 @@ Castle.create(castles)
   })
   .catch((err) =>
     console.log(`An error occurred while getting castles from the DB: ${err}`)
-  );
+  ); 
