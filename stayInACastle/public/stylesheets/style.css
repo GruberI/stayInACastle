@@ -2,8 +2,13 @@ body {
   font-family: 'PT Serif', serif;
  }
 
-a {
-  color: #00B7FF; }
+ .nav-bar {
+    background-color: #3d5e6a;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
 
   #signup-a {
     padding-right: 50px;
@@ -132,6 +137,9 @@ a {
 
   footer {
     background-color: rgb(243, 246, 249);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 
   .footer {
