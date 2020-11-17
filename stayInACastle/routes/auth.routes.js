@@ -119,30 +119,5 @@ router.get('/logout', (req, res) => {
   });
 
 
-  //Get route for individul castles
-router.get("/castle/:id", (req, res) => {
-    const { id } = req.params
-
-    Castle.findById(id)
-      .then((castleFromDB) => {
-        res.render("castle", castleFromDB)
-      })
-      .catch((error) => `Error while fetching castle: ${error}`);
-  });
-
-  router.post("/castle/:castleId/addToFavorites", (req, res) => {
-    const { castleId } = req.params;
-    const { _id } = req.session.currentUser
-
-    User.findByIdAndUpdate(
-      _id,
-      { $push: { favorites: castleId } },
-      { new: true }
-    )
-    .then(() => {
-        res.redirect('/user-profile')
-    })
-    .catch((error) => `Error while adding castle to favorites: ${error}`);
-});
 
 module.exports = router;
