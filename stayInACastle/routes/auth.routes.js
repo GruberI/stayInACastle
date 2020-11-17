@@ -13,9 +13,18 @@ router.get("/signup", (req, res, next) =>
 
 //user-profile page
 router.get("/user-profile", (req, res) => {
-    res.render('user-profile', {
-            userInSession: req.session.currentUser
-        });
+    const { _id } = req.session.currentUser
+    // res.render('user-profile', { userInSession: req.session.currentUser });
+    
+    User.findById(_id)
+        .populate('favorites')
+        .then(user => {
+            console.log(user)
+            const { favorites } = user
+            res.render('user-profile', { favorites, userInSession: req.session.currentUser })
+        })
+        .catch( err => console.log(err))
+
     });
 
 //save credentials in DB with POST-route
@@ -96,7 +105,6 @@ router.post("/login", (req, res, next) => {
                 return;
             } else if (bcrypt.compareSync(password, user.password)) {
                 req.session.currentUser = user;
-                console.log(user)
                 res.redirect('/user-profile');
             } else {
                 res.render('login', {
@@ -130,12 +138,36 @@ router.get('/logout', (req, res) => {
 
     Castle.find({ country })
       .then((castlesFromDB) => {
-        console.log("castles are:", castlesFromDB)
         res.render("country", { castlesFromDB })
       }
       )
       .catch((error) => `Error while fetching countries: ${error}`);
   });
 
+  //Get route for individul castles
+router.get("/castle/:id", (req, res) => {
+    const { id } = req.params
+
+    Castle.findById(id)
+      .then((castleFromDB) => {
+        res.render("castle", castleFromDB)
+      })
+      .catch((error) => `Error while fetching castle: ${error}`);
+  });
+
+  router.post("/castle/:castleId/addToFavorites", (req, res) => {
+    const { castleId } = req.params;
+    const { _id } = req.session.currentUser
+
+    User.findByIdAndUpdate(
+      _id,
+      { $push: { favorites: castleId } },
+      { new: true }
+    )
+    .then(() => {
+        res.redirect('/user-profile')
+    })
+    .catch((error) => `Error while adding castle to favorites: ${error}`);
+});
 
 module.exports = router;

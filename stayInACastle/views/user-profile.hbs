@@ -1,32 +1,47 @@
-<h1>Welcome to your page!</h1> 
-<h3>Search and personalize your favorite list of Castles below:</h3>
+<h1>Welcome to your page!</h1>
+<h4>Search and personalize your favorite list of Castles below:</h4>
 
 <div class="search-bar-user">
-            <div class="searchbar-text-user">
-                <form class="index-form-user" action="/country" method="GET">
-                    {{!-- <label for="countries">Select a country:</label> --}}
-                    <select name="country" id="country">
-                        <option>Select a Country </option>
-                        <option value="Uk">United Kingdom</option>
-                        <option value="Ireland">Ireland</option>
-                        <option value="Netherlands">Netherlands</option>
-                        <option value="France">France</option>
-                        <option value="Spain">Spain</option>
-                        <option value="Italy">Italy</option>
-                    </select>
-                    <select name="capacity" id="capacity">
-                        <option>Number of Guests </option>
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
-                    </select>
-                    <button type="submit" class="search-btn">Search</button>
-                </form>
-            </div>
-        </div>
+    <div class="searchbar-text-user">
+        <form class="index-form-user" action="/country" method="GET">
+            {{!-- <label for="countries">Select a country:</label> --}}
+            <select name="country" id="country">
+                <option>Select a Country </option>
+                <option value="Uk">United Kingdom</option>
+                <option value="Ireland">Ireland</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="France">France</option>
+                <option value="Spain">Spain</option>
+                <option value="Italy">Italy</option>
+            </select>
+            <select name="capacity" id="capacity">
+                <option>Number of Guests </option>
+                <option value="one">1</option>
+                <option value="two">2</option>
+                <option value="three">3</option>
+                <option value="four">4</option>
+            </select>
+            <button type="submit" class="search-btn">Search</button>
+        </form>
+    </div>
+</div>
 
-<h4>Your Favorties</h4>
+<div class="user-favorites-div">
+    <h4>Your Favorites</h4>
+    {{#each favorites}}
+    <div class="favorites-card">
+        <img src="{{this.image}}" alt="castle-img" class="favorites-img">
+        <div class="favorites-card-div">
+            <br>
+            <h2 class="favorites-h2">{{this.name}}</h2>
+            <br>
+            <button class="favorites-btn">
+                <a href="/castle" class="favorites-a">View Castle</a>
+            </button>
+        </div>
+    </div>
+    {{/each}}
+</div>
 
 <a href="/create">Create castle</a>
 

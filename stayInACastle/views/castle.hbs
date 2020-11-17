@@ -1,0 +1,15 @@
+    
+    <div class="castle-div">
+        <h1>{{name}}</h1>
+        <ul class="castle-ul">
+                <img src="{{image}}" alt="castle-img" class="castle-img">
+                <div class="castle-text">
+                    <li class="castle-li">{{address}}</li>
+                    <li class="castle-li">{{description}}</li>
+                    <form action="/castle/{{id}}/addToFavorites" method="POST">
+                        <button class="castle-button">Save to Favorites</button>
+                    </form>
+                    <a href="{{link}}">Click for Booking!</a>
+                </div>
+        </ul>
+    </div>

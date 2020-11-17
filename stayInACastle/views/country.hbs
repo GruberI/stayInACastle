@@ -2,5 +2,6 @@
 {{#each castlesFromDB }}
         <h1>{{this.name}}</h1>
         <p>{{this.address}}</p>
+        <button><a href="/castle/{{_id}}" id="view-castle">View this Castle</a></button>
 {{/each}}
 
