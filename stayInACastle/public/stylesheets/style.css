@@ -2,13 +2,8 @@ body {
   font-family: 'PT Serif', serif;
  }
 
- .nav-bar {
-    background-color: #3d5e6a;
-    overflow: hidden;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
+a {
+  color: #00B7FF; }
 
   #signup-a {
     padding-right: 50px;

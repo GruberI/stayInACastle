@@ -3,6 +3,7 @@ const router = new Router;
 const User = require("../models/user.model");
 const Castle = require("../models/castle.model")
 const bcrypt = require("bcrypt");
+const castleModel = require("../models/castle.model");
 const saltRounds = 11;
 
 
@@ -111,6 +112,18 @@ router.get('/logout', (req, res) => {
     res.redirect('/');
   });
 
+//CREATE CASTLE (ADMIN)
+ router.get("/create", (req, res) => {
+    res.render("castle-create")
+ });
+
+ router.post("/create", (req, res) => {
+     const { name, country, address, image, capacity, link, description } = req.body;
+
+     castleModel.create({name, country, address, image, capacity, link, description})
+     .then(() => res.redirect("/user-profile"))
+     .catch(error => `Error with creating Castle ${error}`)
+ });
   //list by country
   router.get("/country", (req, res) => {
     const { country } = req.query
