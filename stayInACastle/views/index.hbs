@@ -1,23 +1,65 @@
-<section class="banner">
-    <img src="/images/test-castle.jpg" alt="test-castle">
-    <div class="search-bar">
-        <form action="/search" method="POST">
-            <label for="countries">Choose a country:</label>
-            <select name="countries" id="countries">
-        
-                    <option value="uk">United Kingdom</option>
-                    <option value="ireland">Ireland</option>
-                    <option value="netherlands">Netherlands</option>
-                    <option value="france">France</option>
-                    <option value="spain">Spain</option>
-                    <option value="italy">Italy</option>
-                
-            </select>
-            <button type="submit" name="search-button">Search</button>
-        </form>
+<section class="container-fullwidth index-container">
+    <div class="index-main-div">
+        <img class="index-img" src="/images/test-castle.jpg" alt="test-castle">
+        <div class="search-bar">
+            <div class="searchbar-text">
+                <form class="index-form" action="/search" method="POST">
+                    {{!-- <label for="countries">Select a country:</label> --}}
+                    <select name="countries" id="countries">
+                        <option>Select a Country </option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="ireland">Ireland</option>
+                        <option value="netherlands">Netherlands</option>
+                        <option value="france">France</option>
+                        <option value="spain">Spain</option>
+                        <option value="italy">Italy</option>
+                    </select>
+                    <select name="capacity" id="capacity">
+                        <option>Number of Guests </option>
+                        <option value="one">1</option>
+                        <option value="two">2</option>
+                        <option value="three">3</option>
+                        <option value="four">4</option>
+                    </select>
+                    <button type="submit" name="search-button" class="search-btn">Search</button>
+                </form>
+            </div>
+        </div>
     </div>
 </section>
 
-<section class="description"></section>
+<section class="container-fullwidth">
+    <div class="about-section">
+        <div class="about-div">
+            <h3 class="index-h3">Search throughout Europe</h3>
+            <p class="index-p">Everyone deserves the chance to feel like royalty. Search and book your next magical
+                vacation</p>
+        </div>
+        <div class="about-div">
+            <h3 class="index-h3">Save your favorite destinations</h3>
+            <p class="index-p">If you create an account you can login to save and view your favorite location!</p>
+        </div>
+        <div class="about-div">
+            <h3 class="index-h3">Can't find what you're looking for?</h3>
+            <p class="index-p">If you don't see a destination or castle you can add it when you're signed in.</p>
+        </div>
+    </div>
+</section>
 
-<section class="location-cards"></section>
+<section class="container-fullwidth">
+    <div class="amenities-div">
+        <div class="amenities-card">
+            <img class="amenities-img" src="/images/castleRoom.jpeg" alt="castle-room">
+            <p class="amenities-p">Royal rooms</p>
+        </div>
+        <div class="amenities-card">
+            <img class="amenities-img" src="/images/joust.jpeg" alt="jousting">
+            <p class="amenities-p">Relaxing activities</p>
+        </div>
+        <div class="amenities-card">
+            <img class="amenities-img" src="/images/vista.jpeg" alt="vista">
+            <p class="amenities-p">Secluded vistas</p>
+        </div>
+    </div>
+
+</section>
