@@ -11,13 +11,8 @@
                                 <h5>{{this.name}}</h5>
                                 <p>{{this.address}}</p>
                         </div>
-                         <button class="country-btn"><a href="/castle/{{_id}}" id="view-castle">View this Castle</a></button>
-                </div>
-                {{/each}}
-        </div>
-        <a href= "/castles/{{_id}}/edit">Edit Castle</a>
-        <form action="/castles/{{_id}}/delete" method="POST">
-        <button>Delete</button>
+
+          <button><a href="/castle/{{_id}}" id="view-castle">View this Castle</a></button>
         </form>
 
 </div>

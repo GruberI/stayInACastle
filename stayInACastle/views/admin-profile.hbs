@@ -1,0 +1,10 @@
+<a href="/create" class="alt-a">Create Castle</a>
+
+{{#each castles}}
+<h5>{{this.name}}</h5>
+<p>{{this.address}}</p>
+<a href= "/castles/{{_id}}/edit">Edit Castle</a>
+<form action="/castles/{{_id}}/delete" method="POST">
+        <button>Delete</button></form>
+
+{{/each}}

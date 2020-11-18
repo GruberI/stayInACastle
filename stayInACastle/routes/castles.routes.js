@@ -3,7 +3,7 @@ const router = express.Router();
 const Castle = require("../models/castle.model")
 const User = require("../models/user.model");
 
-//check if admin
+//Middleware check roles
 const checkRoles = role => (req, res, next) => {
   if (req.session.currentUser.role === role) {
     return next();
@@ -12,21 +12,29 @@ const checkRoles = role => (req, res, next) => {
   }
 };
 
+router.get("/admin-profile", checkRoles('ADMIN'), (req, res) => {
+  Castle.find()
+  .then(castlesFromDB => {
+    res.render("admin-profile", {castles: castlesFromDB})
+  })
+  .catch(err => console.log(`Something went wrong listing castles: ${err}`))
+})
+
 //CREATE CASTLE (ADMIN)
 router.get("/create", checkRoles('ADMIN'), (req, res) => {
     res.render("castle-create")
  });
 
- router.post("/create", (req, res) => {
+ router.post("/create", checkRoles('ADMIN'), (req, res) => {
      const { name, country, address, image, capacity, link, description } = req.body;
 
      Castle.create({name, country, address, image, capacity, link, description})
-     .then(() => res.redirect("/user-profile"))
+     .then(() => res.redirect("/admin-profile"))
      .catch(error => `Error with creating Castle ${error}`)
  });
 
  //Update castle (ADMIN) (POST)
-router.get("/castles/:id/edit", (req, res) => {
+router.get("/castles/:id/edit", checkRoles('ADMIN'), (req, res) => {
     const { id } = req.params;
 
     Castle.findById( id )
@@ -37,13 +45,13 @@ router.get("/castles/:id/edit", (req, res) => {
 });
 
 //Update castle (ADMIN) POST
-router.post("/castles/:id/edit", (req, res) => {
+router.post("/castles/:id/edit", checkRoles('ADMIN'), (req, res) => {
     const { id } = req.params;
     const { name, country, address, image, capacity, link, description } = req.body; 
 
     Castle.findByIdAndUpdate( id, { name, country, address, image, capacity, link, description }, {new: true} )
     .then (updatedCastle => {
-        res.redirect("/"); ///change into "/countries/${updatedCastle._id}"
+        res.redirect("/admin-profile"); ///change into "/countries/${updatedCastle._id}"
     })
     .catch(err => console.log(`Error occured while updating castle: ${err}`))
 });
@@ -53,7 +61,7 @@ router.post("/castles/:id/delete", (req, res) => {
     const { id } = req.params;
 
     Castle.findByIdAndDelete( id )
-    .then (() =>  res.redirect("/"))
+    .then (() =>  res.redirect("/admin-profile"))
     .catch(err => console.log(`Error occured while deleting castle: ${err}`))
 })
 
