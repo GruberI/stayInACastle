@@ -1,8 +1,14 @@
+<div class="country-first-div">
+        <h1>{{country}}</h1>
+        <div class="country-castle-div">
+                {{#each castlesFromDB }}
+                <div class="castle-first-div">
+                        <img src="{{this.image}}" alt="castle-img" class="country-img">
+                        <div class="country-text">
+                                <h5>{{this.name}}</h5>
+                                <p>{{this.address}}</p>
+                        </div>
 
-{{#each castlesFromDB }}
-        <h1>{{this.name}}</h1>
-        <p>{{this.address}}</p>
-        
         <a href= "/castles/{{_id}}/edit">Edit Castle</a>
           <button><a href="/castle/{{_id}}" id="view-castle">View this Castle</a></button>
         <form action="/castles/{{_id}}/delete" method="POST">
@@ -11,3 +17,13 @@
 
 {{/each}}
 
+<footer>
+    <div class="footer">
+      <hr>
+        <div class="footer-text">
+          <a href="" class="footer-a">About Us</a>
+          <a href="" class="footer-a">Terms and Conditions</a>
+          <a href="" class="footer-a">Contact</a>
+        </div>
+    </div>
+  </footer>

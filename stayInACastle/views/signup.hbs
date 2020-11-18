@@ -1,22 +1,40 @@
-<h2>Signup</h2>
- 
-<form action="/signup" method="POST" id="form-container">
- <div>
-    <label for="input-email">Email</label>
-    <input type="email" id="input-email" name="username" placeholder="Enter your email" />
- </div>
- 
- <div>
-    <label for="password">Password</label>
-    <input id="password" type="password" name="password" placeholder="*******">
- </div>
- 
- {{#if errorMessage}}
-  <div class="error-message">{{errorMessage}}</div>
- {{/if}}
- 
- <div>
-  <button>Create account</button>
- </div>
- 
-</form>
+<div class="signup-page">
+   <div class="signup-container">
+      <h2>Signup</h2>
+      <div class="signup-form-div">
+         <form action="/signup" method="POST" id="form-container">
+         <div>
+            <label for="input-email">Email address</label>
+            <br>
+            <input type="email" id="input-email" name="username" placeholder="Enter your email" class="login-input"/>
+         </div>
+
+         <div>
+            <label for="password">Password</label>
+            <br>
+            <input id="password" type="password" name="password" placeholder="*********" class="login-input">
+         </div>
+
+         {{#if errorMessage}}
+         <div class="error-message">{{errorMessage}}</div>
+         {{/if}}
+
+         <div>
+            <button class="signup-btn">Create account</button>
+         </div>
+
+      </form>
+      </div>
+   </div>
+</div>
+
+<footer class="index-footer">
+  <div class="footer">
+    <hr>
+    <div class="footer-text">
+      <a href="" class="footer-a">About Us</a>
+      <a href="" class="footer-a">Terms and Conditions</a>
+      <a href="" class="footer-a">Contact</a>
+    </div>
+  </div>
+</footer>

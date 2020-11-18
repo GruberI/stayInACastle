@@ -5,16 +5,15 @@ const User = require("../models/user.model");
 
 //check if admin
 const checkRoles = role => (req, res, next) => {
-  if (req.user.role === role) {
+  if (req.session.currentUser.role === role) {
     return next();
   } else {
-    res.redirect('/');
+    res.redirect('/user-profile');
   }
 };
 
-
 //CREATE CASTLE (ADMIN)
-router.get("/create", (req, res) => {
+router.get("/create", checkRoles('ADMIN'), (req, res) => {
     res.render("castle-create")
  });
 
