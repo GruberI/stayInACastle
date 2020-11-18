@@ -3,10 +3,17 @@ const router = express.Router();
 const Castle = require("../models/castle.model")
 const User = require("../models/user.model");
 
-
+//check if admin
+const checkRoles = role => (req, res, next) => {
+  if (req.session.currentUser.role === role) {
+    return next();
+  } else {
+    res.redirect('/user-profile');
+  }
+};
 
 //CREATE CASTLE (ADMIN)
-router.get("/create", (req, res) => {
+router.get("/create", checkRoles('ADMIN'), (req, res) => {
     res.render("castle-create")
  });
 

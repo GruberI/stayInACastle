@@ -10,8 +10,10 @@ const logger       = require('morgan');
 const path         = require('path');
 const mongoURI     = 'mongodb://localhost/stayinacastle'
 
+//process.env.MONGO_ATLAS_URI ||
+
 mongoose
-  .connect(process.env.MONGO_ATLAS_URI || mongoURI , {
+  .connect( process.env.MONGO_ATLAS_URI , {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true
