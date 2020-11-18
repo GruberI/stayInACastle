@@ -1,5 +1,8 @@
 <div class="country-first-div">
+
+
         <h1>{{country}}</h1>
+        
         <div class="country-castle-div">
                 {{#each castlesFromDB }}
                 <div class="castle-first-div">
@@ -8,14 +11,16 @@
                                 <h5>{{this.name}}</h5>
                                 <p>{{this.address}}</p>
                         </div>
-
+                         <button class="country-btn"><a href="/castle/{{_id}}" id="view-castle">View this Castle</a></button>
+                </div>
+                {{/each}}
+        </div>
         <a href= "/castles/{{_id}}/edit">Edit Castle</a>
-          <button><a href="/castle/{{_id}}" id="view-castle">View this Castle</a></button>
         <form action="/castles/{{_id}}/delete" method="POST">
         <button>Delete</button>
         </form>
 
-{{/each}}
+</div>
 
 <footer>
     <div class="footer">

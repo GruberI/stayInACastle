@@ -56,7 +56,6 @@ router.post("/castles/:id/delete", (req, res) => {
 
     Castle.find({ country })
       .then((castlesFromDB) => {
-        console.log("castles are:", castlesFromDB)
         res.render("country", { castlesFromDB })
       }
       )
