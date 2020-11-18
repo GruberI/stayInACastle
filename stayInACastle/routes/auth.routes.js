@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const router = new Router;
 const User = require("../models/user.model");
+const Castle = require("../models/castle.model");
 const bcrypt = require("bcrypt");
 const saltRounds = 11;
 
@@ -17,7 +18,6 @@ router.get("/user-profile", (req, res) => {
     User.findById(_id)
         .populate('favorites')
         .then(user => {
-            console.log(user)
             const { favorites } = user
             res.render('user-profile', { favorites, userInSession: req.session.currentUser })
         })

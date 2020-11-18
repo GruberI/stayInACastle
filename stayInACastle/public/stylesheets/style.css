@@ -1,8 +1,402 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+.body-div {
+  position: relative;
+}
+ .nav-bar {
+    background-color: #3d5e6a;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
 
-a {
-  color: #00B7FF; }
+  #signup-a {
+    padding-right: 50px;
+  }
 
-/*# sourceMappingURL=style.css.map */
+  .nav-bar a {
+    font-family: 'PT Serif', serif;
+    float: right;
+    color: white;
+    padding: 20px;
+    padding-top: 30px;
+    font-size: 20px;
+  }
+
+  .index-main-div {
+  position: relative;
+  }
+
+  .search-bar {
+    width: 50%;
+    background-color: rgba(208, 208, 208, .7);
+    border-radius: 8px;
+    color: black;  
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+  }
+
+  .searchbar-text {
+    margin: auto;
+    width: 100%;
+  }
+
+  .index-form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .index-page {
+    position: relative;
+  }
+
+  #country {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    font-family: 'PT Serif', serif;
+  }
+
+  #capacity {
+    width: 50%;
+    border: none;
+    padding-left: 5px;
+    font-family: 'PT Serif', serif;
+  }
+
+  .search-btn {
+    border: none;
+    border-radius: 3px;
+    background-color:#264c5a;
+    color: rgb(238, 238, 238);
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'PT Serif', serif;
+  }
+
+  .index-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .about-section {
+    font-family: 'PT Serif', serif;
+    color: white;
+    background-color: #3d5e6a;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .about-div {
+    width: 30%;
+    height: 40%;
+  }
+
+  .index-h3 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .index-p {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .amenities-div {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+
+  .amenities-card {
+    /* border: 1px solid #3d5e6a; */
+    margin: 10px;
+    padding-top: 30px;
+    /* padding-top: 30px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px; */
+  }
+
+  .amenities-img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .amenities-p {
+    font-family: 'PT Serif', serif;
+    margin-bottom: 0;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 5px;
+  }
+
+  /* login page */
+
+  .login-container {
+    font-family: 'PT Serif', serif;
+    margin: auto;
+    width: 40%;
+    height: 60%;
+    padding: 10px;
+  }
+
+  .login-container h2 {
+    text-align: center;
+    margin-top: 15%;
+    padding-bottom: 10px;
+  }
+
+  .login-btn {
+    border: none;
+    border-radius: 3px;
+    background-color:#264c5a;
+    color: rgb(238, 238, 238);
+    margin-top: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .login-input {
+    width: 80%;
+    margin-top: 5px;
+    margin: 10px;
+    margin-left: 0;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+    padding: 5px;
+  }
+
+  .login-form-div {
+    width: 80%;
+    margin-left: 20%;
+  }
+
+  /* sign up page */
+
+  .signup-container {
+    font-family: 'PT Serif', serif;
+    margin: auto;
+    width: 40%;
+    height: 60%;
+    padding: 10px;
+  }
+
+  .signup-container h2 {
+    text-align: center;
+    margin-top: 15%;
+    padding-bottom: 10px;
+  }
+
+  .signup-btn {
+    border: none;
+    border-radius: 3px;
+    background-color:#264c5a;
+    color: rgb(238, 238, 238);
+    margin-top: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .signup-form-div {
+    width: 80%;
+    margin-left: 20%;
+  }
+
+  /* user profile page */
+  .up-main-div {
+    font-family: 'PT Serif', serif;
+    margin: auto;
+    width: 90%;
+    padding-top: 30px;
+  }
+
+  .up-header-text {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 15px;
+  }
+
+  .up-header-text h4 {
+    padding-top: 15px;
+  }
+
+  .up-search-bar {
+    text-align: center;
+  }
+
+  #up-country {
+    width: 40%;
+    padding: 6px;
+  }
+
+  #up-capacity {
+    width: 40%;
+    padding: 6px;
+  }
+
+  .up-search-btn {
+    border: none;
+    border-radius: 3px;
+    background-color:#264c5a;
+    color: rgb(238, 238, 238);
+    margin-top: 10px;
+    margin-left: 0;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .user-favorites-div h3 {
+    padding-top: 30px;
+    padding-bottom: 5px;
+    text-align: center;
+  }
+
+  .favorites-div {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+  }
+
+  .favorites-card {
+    width: 30%;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #264c5a;
+  }
+
+  .favorites-card-div {
+    background-color: white;
+    margin-top: 5px;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .favorites-title {
+    width: 95%;
+    height: 50px;
+  }
+
+  .favorites-img {
+    object-fit: cover;
+  }
+
+  .favorites-btn {
+    border: none;
+    border-radius: 3px;
+    background-color: rgba(70, 102, 113, .9);
+    color: rgb(238, 238, 238);
+    margin-top: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .favorites-a {
+    color: white;
+  }
+
+  .up-alt-a {
+    padding-top: 15px;
+    padding-bottom: 15px;;
+    text-align: center;
+  }
+
+  .alt-a {
+    color: #264c5a;
+    font-size: 18px;
+    text-decoration: underline;
+  }
+
+  /* country page */
+  .country-castle-div {
+    font-family: 'PT Serif', serif;
+    margin: auto;
+    margin-bottom: 50px;
+    width: 90%;
+    padding-top: 50px;
+    border: 8px solid #264c5a;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .castle-first-div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .country-img {
+    width: 500px;
+    height: 450px;
+    object-fit: cover;
+  }
+
+  .country-text {
+    color: white;
+    position: absolute;
+    padding-bottom: 20px;
+    bottom: 10px;
+    left: 16px;
+  }
+
+  .country-btn {
+    background-color: rgb(70, 102, 113);
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  #view-castle {
+    color: white;
+  }
+
+  footer {
+    background-color: rgb(243, 246, 249);
+    bottom: 0;
+    width: 100%;
+  }
+
+  .index-footer{
+    background-color: rgb(243, 246, 249);
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+  }
+
+  .footer {
+    margin: auto;
+    width: 50%;
+    padding-top: 5px;
+  }
+
+  .footer-text {
+    font-family: 'PT Serif', serif;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+  }
+
+  .footer-a {
+    color: rgb(140, 140, 140);
+  }
+  
+ 

@@ -1,48 +1,76 @@
-<h1>Welcome to your page!</h1>
-<h4>Search and personalize your favorite list of Castles below:</h4>
+<div class="up-container">
+    <div class="up-main-div">
+        <div class="up-header">
+            <div class="up-header-text">
+                <h1>Welcome to your page!</h1>
+                <h4>Search and personalize your favorite list of Castles</h4>
+            </div>
 
-<div class="search-bar-user">
-    <div class="searchbar-text-user">
-        <form class="index-form-user" action="/country" method="GET">
-            {{!-- <label for="countries">Select a country:</label> --}}
-            <select name="country" id="country">
-                <option>Select a Country </option>
-                <option value="Uk">United Kingdom</option>
-                <option value="Ireland">Ireland</option>
-                <option value="Netherlands">Netherlands</option>
-                <option value="France">France</option>
-                <option value="Spain">Spain</option>
-                <option value="Italy">Italy</option>
-            </select>
-            <select name="capacity" id="capacity">
-                <option>Number of Guests </option>
-                <option value="one">1</option>
-                <option value="two">2</option>
-                <option value="three">3</option>
-                <option value="four">4</option>
-            </select>
-            <button type="submit" class="search-btn">Search</button>
-        </form>
-    </div>
-</div>
+            <div class="up-search-bar">
+                <div class="up-searchbar-text">
+                    <form class="up-form-user" action="/country" method="GET">
+                        {{!-- <label for="countries">Select a country:</label> --}}
+                        <select name="country" id="up-country">
+                            <option>Select a Country </option>
+                            <option value="Uk">United Kingdom</option>
+                            <option value="Ireland">Ireland</option>
+                            <option value="Netherlands">Netherlands</option>
+                            <option value="France">France</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Italy">Italy</option>
+                        </select>
+                        <select name="capacity" id="up-capacity">
+                            <option>Number of Guests </option>
+                            <option value="one">1</option>
+                            <option value="two">2</option>
+                            <option value="three">3</option>
+                            <option value="four">4</option>
+                        </select>
+                        <button type="submit" class="up-search-btn">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-<div class="user-favorites-div">
-    <h4>Your Favorites</h4>
-    {{#each favorites}}
-    <div class="favorites-card">
-        <img src="{{this.image}}" alt="castle-img" class="favorites-img">
-        <div class="favorites-card-div">
-            <br>
-            <h2 class="favorites-h2">{{this.name}}</h2>
-            <br>
-            <button class="favorites-btn">
-                <a href="/castle" class="favorites-a">View Castle</a>
-            </button>
+        <div class="user-favorites-div">
+            <h3>Your Favorites</h3>
+            <hr>
+        {{!-- {{#each favorites}} --}}
+        {{!-- {{> castleCard this}} --}}
+        {{!-- {{/each}} --}}
+        {{!-- </div> --}}
+
+        <div class="favorites-div">
+            {{#each favorites}}
+            <div class="favorites-card">
+                <img src="{{this.image}}" alt="castle-img" class="favorites-img">
+                <div class="favorites-card-div">
+                    
+                    <div class="favorites-title">
+                        <h5 class="favorites-h2">{{this.name}}</h5>
+                    </div>
+                    <button class="favorites-btn">
+                        <a href="/castle/{{_id}}" class="favorites-a">View Castle</a>
+                    </button>
+
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        <div class="up-alt-a">
+            <p>Can't find what your looking for? <span><a href="/create" class="alt-a">Create Castle</a></span> or <span><a href="/logout" class="alt-a">Log Out</a></span></p>
         </div>
     </div>
-    {{/each}}
 </div>
 
-<a href="/create">Create Castle</a>
-
-<a href="/logout">Log Out</a>
+<footer>
+    <div class="footer">
+      <hr>
+        <div class="footer-text">
+          <a href="" class="footer-a">About Us</a>
+          <a href="" class="footer-a">Terms and Conditions</a>
+          <a href="" class="footer-a">Contact</a>
+        </div>
+    </div>
+  </footer>
