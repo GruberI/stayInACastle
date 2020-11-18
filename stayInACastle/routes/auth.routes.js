@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const router = new Router;
 const User = require("../models/user.model");
+console.log(User)
 const bcrypt = require("bcrypt");
 const saltRounds = 11;
 
