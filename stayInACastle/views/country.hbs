@@ -1,7 +1,9 @@
 <div class="country-first-div">
+
+<h1>{{country}}</h1>
         
         <div class="country-castle-div">
-                {{#each castlesFromDB }}
+                {{#each castlesFromDB}}
                 <div class="castle-first-div">
                         <img src="{{this.image}}" alt="castle-img" class="country-img">
                         <div class="country-text">
@@ -11,6 +13,8 @@
 
           <button><a href="/castle/{{_id}}" id="view-castle">View this Castle</a></button>
         </form>
+
+        {{/each}}
 
 </div>
 
