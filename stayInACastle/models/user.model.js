@@ -8,7 +8,7 @@ const userSchema = new Schema(
       favorites: [{ type: Schema.Types.ObjectId, ref: 'Castle' }],
       role: {
         type: String,
-        enum: ['GUEST', 'ADMIN'],
+        enum: ['GUEST','ADMIN'],
         default: 'GUEST'
       }
       

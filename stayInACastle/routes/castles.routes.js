@@ -15,7 +15,8 @@ const checkRoles = role => (req, res, next) => {
 router.get("/admin-profile", checkRoles('ADMIN'), (req, res) => {
   Castle.find()
   .then(castlesFromDB => {
-    res.render("admin-profile", {castles: castlesFromDB})
+    console.log(castlesFromDB)
+    res.render("adminProfile", {castles: castlesFromDB})
   })
   .catch(err => console.log(`Something went wrong listing castles: ${err}`))
 })
@@ -71,8 +72,7 @@ router.post("/castles/:id/delete", (req, res) => {
 
     Castle.find({ country })
       .then((castlesFromDB) => {
-        console.log("castles are:", castlesFromDB)
-        res.render("country", { castlesFromDB })
+        res.render("country", { castlesFromDB, country })
       }
       )
       .catch((error) => `Error while fetching countries: ${error}`);
