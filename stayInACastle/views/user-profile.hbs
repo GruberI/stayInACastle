@@ -35,43 +35,37 @@
         <div class="user-favorites-div">
             <h3>Your Favorites</h3>
             <hr>
-        {{!-- {{#each favorites}} --}}
-        {{!-- {{> castleCard this}} --}}
-        {{!-- {{/each}} --}}
-        {{!-- </div> --}}
+            <div class="favorites-div">
+                {{#each favorites}}
+                <div class="favorites-card">
+                    <img src="{{this.image}}" alt="castle-img" class="favorites-img">
+                    <div class="favorites-card-div">
 
-        <div class="favorites-div">
-            {{#each favorites}}
-            <div class="favorites-card">
-                <img src="{{this.image}}" alt="castle-img" class="favorites-img">
-                <div class="favorites-card-div">
-                    
-                    <div class="favorites-title">
-                        <h5 class="favorites-h2">{{this.name}}</h5>
+                        <div class="favorites-title">
+                            <h5 class="favorites-h2">{{this.name}}</h5>
+                        </div>
+                        <button class="favorites-btn">
+                            <a href="/castle/{{_id}}" class="favorites-a">View Castle</a>
+                        </button>
+
                     </div>
-                    <button class="favorites-btn">
-                        <a href="/castle/{{_id}}" class="favorites-a">View Castle</a>
-                    </button>
-
                 </div>
+                {{/each}}
             </div>
-            {{/each}}
-        </div>
-        
- <div id="mapid"></div>
-        <div class="up-alt-a">
-            <p> <span><a href="/logout" class="alt-a">Log Out</a></span></p>
-        </div>
-    </div>
-</div>
 
-<footer>
-    <div class="footer">
-      <hr>
-        <div class="footer-text">
-          <a href="" class="footer-a">About Us</a>
-          <a href="" class="footer-a">Terms and Conditions</a>
-          <a href="" class="footer-a">Contact</a>
+            <div class="up-alt-a">
+                <p> <span><a href="/logout" class="alt-a">Log Out</a></span></p>
+            </div>
         </div>
     </div>
-  </footer>
+
+    <footer class="footer">
+        <div class="footer">
+            <hr>
+            <div class="footer-text">
+                <a href="" class="footer-a">About Us</a>
+                <a href="" class="footer-a">Terms and Conditions</a>
+                <a href="" class="footer-a">Contact</a>
+            </div>
+        </div>
+    </footer>

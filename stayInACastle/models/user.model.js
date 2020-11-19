@@ -11,7 +11,6 @@ const userSchema = new Schema(
         enum: ['GUEST','ADMIN'],
         default: 'GUEST'
       }
-      
     },
     {
       timestamps: true,

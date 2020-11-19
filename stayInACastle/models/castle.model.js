@@ -9,7 +9,10 @@ const castleSchema = new Schema(
       image: String,
       capacity: Number,
       link: String,
-      description: String
+      description: String,
+      pun: String,
+      lat: Number,
+      lng: Number
     },
     {
       timestamps: true,
