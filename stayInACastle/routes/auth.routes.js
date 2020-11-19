@@ -4,11 +4,9 @@ const User = require("../models/user.model");
 const bcrypt = require("bcrypt");
 const saltRounds = 11;
 
-// show signup view to user
 router.get("/signup", (req, res, next) =>
     res.render("signup"));
 
-//user-profile page
 router.get("/user-profile", (req, res) => {
     const { _id } = req.session.currentUser
     
@@ -19,17 +17,14 @@ router.get("/user-profile", (req, res) => {
             res.render('user-profile', { favorites, userInSession: req.session.currentUser })
         })
         .catch( err => console.log(err))
-
     });
 
-//save credentials in DB with POST-route
 router.post("/signup", (req, res, next) => {
     const {
         username,
         password
     } = req.body;
 
-    //are email and password filled in?
     if (!username || !password) {
         res.render("signup", {
             errorMessage: "Please provide both your email and password"
@@ -37,7 +32,6 @@ router.post("/signup", (req, res, next) => {
         return;
     }
 
-    //is the email of new user unique?
     User.findOne({
             username
         })
