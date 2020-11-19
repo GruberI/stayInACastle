@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 
+
+
 const castleSchema = new Schema(
     {
       name: String,
@@ -11,8 +13,8 @@ const castleSchema = new Schema(
       link: String,
       description: String,
       pun: String,
-      lat: Number,
-      lng: Number
+      lat:  Schema.Types.Decimal128,
+      lng:  Schema.Types.Decimal128
     },
     {
       timestamps: true,

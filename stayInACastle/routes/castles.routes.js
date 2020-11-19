@@ -81,7 +81,7 @@ router.post("/castles/:id/delete", (req, res) => {
  router.get("/castle/:id", (req, res) => {
     const { id } = req.params
 
-    Castle.findById(id)
+    Castle.findById(id) 
       .then((castleFromDB) => {
         res.render("castle", castleFromDB)
       })
