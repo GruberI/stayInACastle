@@ -51,8 +51,8 @@ router.post("/castles/:id/edit", (req, res) => {
   const { name, country, address, image, capacity, link, description, pun, lat, lng } = req.body; 
 
   Castle.findByIdAndUpdate( id, { name, country, address, image, capacity, link, description, pun, lat, lng  }, {new: true} )
-  .then (() => {
-      res.redirect("/castles/:id/"); ///change into "/countries/${updatedCastle._id}"
+  .then ((updatedCastle) => {
+      res.redirect(`/castle/${updatedCastle._id}`); ///change into "/countries/${updatedCastle._id}"
   })
   .catch(err => console.log(`Error occured while updating castle: ${err}`))
 });
@@ -81,7 +81,7 @@ router.post("/castles/:id/delete", (req, res) => {
  router.get("/castle/:id", (req, res) => {
     const { id } = req.params
 
-    Castle.findById(id)
+    Castle.findById(id) 
       .then((castleFromDB) => {
         res.render("castle", castleFromDB)
       })
