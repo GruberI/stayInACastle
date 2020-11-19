@@ -1,11 +1,13 @@
 <div class="castle-card-main">
-    <div>
         <h5>{{this.name}}</h5>
         <p>{{this.country}}</p>
+
 
         <a href="/castles/{{this._id}}/edit">Edit</a>
 
         <form action="/castles/{{this._id}}/delete" method="POST">
             <button>Delete</button></form>
     </div>
+
+
 </div>
