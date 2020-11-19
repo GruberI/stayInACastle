@@ -551,6 +551,19 @@
     padding: 10px 25px;
   }
 
+  .edit-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 5em;
+  }
+
+  .item-edit-div label {
+    font-size: 20px;
+  }
+
+  .item-edit-div input {
+  }
+
   .footer {
     margin: auto;
     width: 60%;

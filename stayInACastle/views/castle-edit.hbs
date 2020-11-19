@@ -1,40 +1,45 @@
-<form action="/castles/{{_id}}/edit" method="POST" id="form-container">
-    <div>
+<div class="edit-main">
+    <h2>Edit Castle</h2>
+   <div class="edit-div">
+       <form action="/castles/{{_id}}/edit" method="POST" id="form-container">
+    <div class="item-edit-div">
         <label for="input-name">Castle Name</label>
         <input type="text" id="input-name" name="name" value="{{this.name}}" />
     </div>
 
-    <div>
+    <div class="item-edit-div">
         <label for="input-country">Country</label>
         <input type="text" id="input-country" name="country" value="{{this.country}}" />
     </div>
 
-    <div>
+    <div class="item-edit-div">
         <label for="input-address">Address</label>
         <input type="text" id="input-address" name="address" value="{{this.address}}" />
     </div>
 
-    <div>
+    <div class="item-edit-div">
         <label for="input-image">Image</label>
         <input type="text" id="input-image" name="image" value="{{this.image}}" />
     </div>
 
-    <div>
+    <div class="item-edit-div">
         <label for="input-capacity">Capacity</label>
         <input type="number" id="input-capacity" name="capacity" value="{{this.capacity}}" />
     </div>
 
-    <div>
+    <div class="item-edit-div">
         <label for="input-link">Link</label>
         <input type="text" id="input-link" name="link" value="{{this.link}}" />
     </div>
 
-    <div>
+    <div class="item-edit-div">
         <label for="input-description">Description</label>
         <input type="text" id="input-description" name="description" value="{{this.description}}" />
     </div>
 
-    <div>
+    <div class="item-edit-div">
         <button type="submit">Update Castle</button>
     </div>
 </form>
+   </div>
+</div>
