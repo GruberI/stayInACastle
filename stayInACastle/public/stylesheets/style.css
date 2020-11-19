@@ -85,9 +85,8 @@
 
   .index-img {
     width: 100%;
+
     height: auto;
-    /* height: 45em;
-    object-fit: cover; */
   }
 
   .about-section {
@@ -584,4 +583,7 @@
     position: absolute;
   }
   
- 
+  #map {
+    height: 500px;
+    width: 100%;
+   }

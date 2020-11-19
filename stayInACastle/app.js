@@ -16,14 +16,18 @@ mongoose
   .connect( process.env.MONGO_ATLAS_URI , {
     useCreateIndex: true,
     useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
-  .then(x => {
+    useUnifiedTopology: true,
+  }
+
+  )
+ 
+ .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
   .catch(err => {
     console.error('Error connecting to mongo', err)
   });
+
 
 const app_name = require('./package.json').name;
 // const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
@@ -64,7 +68,6 @@ app.use("/", router);
 
 const castles = require("./routes/castles.routes");
 app.use("/", castles); 
-
 
 
 module.exports = app;
