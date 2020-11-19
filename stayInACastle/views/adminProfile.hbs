@@ -1,5 +1,21 @@
-<a href="/create" class="alt-a">Create Castle</a>
+<div class="admin-main">
+        <button class="admin-btn"><a href="/create" class="admin-a">Create a New Castle</a></button>
 
-        {{#each castles }}
-        {{> castleCard this}}
-        {{/each}}
+        <div class="admin-card-div">
+                {{#each castles }}
+                <div class="castle-card">{{> castleCard this}}</div>
+                {{/each}}
+        </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer">
+    <hr>
+    <div class="footer-text">
+      <a href="" class="footer-a">About Us</a>
+      <a href="" class="footer-a">Terms and Conditions</a>
+      <a href="" class="footer-a">Contact</a>
+    </div>
+  </div>
+</footer>
