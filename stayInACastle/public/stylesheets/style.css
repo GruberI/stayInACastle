@@ -105,7 +105,8 @@
   }
 
   .index-h3 {
-    font-size: 20px;
+    font-family: 'Bad Script', cursive;
+    font-size: 25px;
     text-align: center;
   }
 
@@ -142,6 +143,9 @@
     font-size: 15px;
     text-align: center;
     padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #3d5e6a;
+    color: white;
   }
 
   /* login page */
@@ -368,8 +372,8 @@
   }
 
   .country-first-div h1 {
-    font-family: 'PT Serif', serif;
-    font-size: 3.3em;
+    font-family: 'Bilbo Swash Caps', cursive;
+    font-size: 5em;
     color: #264c5a;
     text-align: center;
     text-decoration: underline;
@@ -377,6 +381,11 @@
     padding-bottom: 10px;
     margin-bottom: 0;
   }
+
+  /* .country-text h5 {
+    font-family: 'Bad Script', cursive;
+    font-size: 1.5em;
+  } */
 
   .country-img {
     width: 550px;
@@ -415,6 +424,7 @@
 
   .column-left h1 {
     margin-bottom: 10px;
+    margin-top: 10px;
   }
 
   .column-left p {
@@ -466,10 +476,6 @@
     justify-content: center;
   }
 
-  /* .castle-btn-div p {
-    padding: 5px;
-  } */
-
   .castle-button {
     border: none;
     background-color: rgba(70, 102, 113, .9);
@@ -494,7 +500,20 @@
   }
 
   .pun {
+    padding-top: 1.5em;
+    padding-left: 1em;
     font-size: 1.3em;
+  }
+
+  .map-container {
+    margin: auto;
+    width: 95%;
+    display: flex;
+    padding-top: 20px;
+  }
+
+  .map-div {
+    width: 100%;
   }
 
   /* admin/castle-card page */
