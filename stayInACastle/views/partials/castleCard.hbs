@@ -1,10 +1,9 @@
 <div class="castle-card-main">
-    <div>
         <h5>{{this.name}}</h5>
-    <p>{{this.country}}</p>
-    <form action="/castles/{{this._id}}/edit" method="POST">
-    <button>Edit Castle</button></form>
-    <form action="/castles/{{this._id}}/delete" method="POST" class="admin-btn">
-        <button>Delete</button></form>
-    </div>
+        <p>{{this.country}}</p>
+        <img src="{{this.image}}" alt="img" class="castle-card-img">
+        <form action="/castles/{{this._id}}/edit" method="POST">
+            <button>Edit Castle</button></form>
+        <form action="/castles/{{this._id}}/delete" method="POST">
+            <button>Delete</button></form>
 </div>
