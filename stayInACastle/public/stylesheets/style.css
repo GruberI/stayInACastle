@@ -85,7 +85,9 @@
 
   .index-img {
     width: 100%;
-    height: auto;
+    /* height: auto; */
+    height: 45em;
+    object-fit: cover;
   }
 
   .about-section {
@@ -273,6 +275,7 @@
   .favorites-div {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     padding-top: 10px;
   }
 
@@ -294,7 +297,7 @@
 
   .favorites-title {
     width: 95%;
-    height: 50px;
+    height: 2.8em;
   }
 
   .favorites-img {
@@ -309,6 +312,7 @@
     background-color: rgba(70, 102, 113, .9);
     color: rgb(238, 238, 238);
     margin-top: 8px;
+    margin-bottom: .5em;
     padding-top: 3px;
     padding-bottom: 3px;
     padding-left: 20px;
@@ -366,7 +370,7 @@
 
   .country-first-div h1 {
     font-family: 'PT Serif', serif;
-    font-size: 3.5em;
+    font-size: 3.3em;
     color: #264c5a;
     text-align: center;
     text-decoration: underline;
@@ -400,17 +404,150 @@
     color: white;
   }
 
+  /* individual castle page */
+
+  .castle-div {
+    margin: auto;
+    width: 95%;
+    display: flex;
+    font-family: 'PT Serif', serif;
+    color: #264c5a;
+  }
+
+  .column-left h1 {
+    margin-bottom: 10px;
+  }
+
+  .column-left p {
+    margin-top: 0;
+  }
+
+  .castle-img {
+    width: 600px;
+    height: 500px;
+    object-fit: fill;
+    border: 1px solid #264c5a;
+  }
+
+  .column-right{
+    display: flex;
+    padding-top: 5em;
+  }
+
+  .castle-col-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .castle-text {
+    background-color: #264c5a;
+    width: 90%;
+  }
+
+  .text-wrap-div {
+    margin: 20px;
+    background-color: white;
+    
+  }
+
+  .castle-p {
+    padding: .5em;
+  }
+
+  .castle-btn-div {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* .castle-btn-div p {
+    padding: 5px;
+  } */
+
+  .castle-button {
+    border: none;
+    background-color: rgba(70, 102, 113, .9);
+    color: rgb(238, 238, 238);
+    /* margin-top: 15px; */
+    margin-bottom: 20px;
+    margin-left: 20px;
+    /* margin-right: 5px; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .castle-button a {
+    color: rgb(238, 238, 238);
+    text-decoration: none;
+  }
+
+  .title-p {
+    text-decoration: underline;
+  }
+
+  .pun {
+    font-size: 1.3em;
+  }
+
+  /* admin/castle-card page */
+
+  .castle-card-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .admin-main {
+    margin: auto;
+    width: 90%;
+  }
+
+  .admin-card-div {
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+  }
+
+  .castle-card {
+    border: 5px solid #264c5a;
+    width: 30%;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    padding-top: 20px;
+  }
+
+  .admin-btn {
+    margin-left: 32em;
+    text-align: center;
+    border: none;
+    background-color: #264c5a;
+    color: rgb(238, 238, 238);
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding: 10px 25px;
+  }
+
+  .admin-a {
+    color: white;
+  }
+
+  .footer {
+    margin: auto;
+    width: 60%;
+    padding-top: 5px;
+  }
+
   .index-footer{
     background-color: rgb(243, 246, 249);
     bottom: 0;
     width: 100%;
     position: absolute;
-  }
-
-  .footer {
-    margin: auto;
-    width: 50%;
-    padding-top: 5px;
   }
 
   .footer-text {
@@ -423,6 +560,14 @@
 
   .footer-a {
     color: rgb(140, 140, 140);
+    text-decoration: none;
+  }
+
+  .up-footer {
+    background-color: rgb(243, 246, 249);
+    bottom: 0;
+    width: 100%;
+    position: absolute;
   }
   
  
