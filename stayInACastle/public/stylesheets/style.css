@@ -85,7 +85,9 @@
 
   .index-img {
     width: 100%;
-    height: auto; 
+    height: auto;
+    /* height: 45em;
+    object-fit: cover; */
   }
 
   .about-section {
@@ -427,6 +429,11 @@
     border: 1px solid #264c5a;
   }
 
+  .castle-card-img {
+    width: 100px;
+    height: 100px;
+  }
+
   .column-right{
     display: flex;
     padding-top: 5em;
@@ -521,7 +528,7 @@
   }
 
   .admin-btn {
-    margin-left: 32em;
+    margin-left: 42%;
     text-align: center;
     border: none;
     background-color: #264c5a;
@@ -533,6 +540,15 @@
 
   .admin-a {
     color: white;
+  }
+
+  .admin-btn-two{
+    margin: 0;
+    text-align: center;
+    border: none;
+    background-color: #264c5a;
+    color: rgb(238, 238, 238);
+    padding: 10px 25px;
   }
 
   .footer {
