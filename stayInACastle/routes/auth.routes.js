@@ -4,7 +4,6 @@ const User = require("../models/user.model");
 const bcrypt = require("bcrypt");
 const saltRounds = 11;
 
-
 // show signup view to user
 router.get("/signup", (req, res, next) =>
     res.render("signup"));
@@ -12,7 +11,6 @@ router.get("/signup", (req, res, next) =>
 //user-profile page
 router.get("/user-profile", (req, res) => {
     const { _id } = req.session.currentUser
-    // res.render('user-profile', { userInSession: req.session.currentUser });
     
     User.findById(_id)
         .populate('favorites')
@@ -52,11 +50,9 @@ router.post("/signup", (req, res, next) => {
             }
         
 
-    //encrypt the password
     const salt = bcrypt.genSaltSync(saltRounds);
     const hashedPassword = bcrypt.hashSync(password, salt);
 
-    //create new user in DB
     const newUser = new User({
         username,
         password: hashedPassword
@@ -71,13 +67,11 @@ router.post("/signup", (req, res, next) => {
         .catch(err => next(err));
 }) 
 .catch(error => next(error));
-})
+});
 
-
-//login page
 router.get('/login', (req, res) => 
     res.render('login')
-)
+);
 
 router.post("/login", (req, res, next) => {
     const {
@@ -115,13 +109,11 @@ router.post("/login", (req, res, next) => {
             }
         })
         .catch(error => next(error));
-})
+});
 
 router.get('/logout', (req, res) => {
     req.session.destroy();
     res.redirect('/');
   });
-
-
 
 module.exports = router;

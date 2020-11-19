@@ -1,10 +1,9 @@
 function startMap() {
-  const sophiesinput = document.getElementById('sophiesinput')
-  const issasinput = document.getElementById('issasinput')
-  console.log(parseInt(sophiesinput.value))
+  const latitude = document.getElementById('latitude')
+  const longitude = document.getElementById('longitude')
   const castle = {
-  	lat: parseInt(sophiesinput.value),
-    lng: parseInt(issasinput.value)};
+  	lat: parseInt(latitude.value),
+    lng: parseInt(longitude.value)};
 
   const map = new google.maps.Map(
     document.getElementById('map'),

@@ -59,7 +59,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 // default value for title local
-app.locals.title = 'Stay in a Castle';
+app.locals.title = 'Stay In A Castle';
 
 const index = require('./routes/index');
 app.use('/', index);

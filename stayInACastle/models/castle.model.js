@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 
-
-
 const castleSchema = new Schema(
     {
       name: String,

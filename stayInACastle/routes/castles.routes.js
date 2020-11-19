@@ -12,14 +12,14 @@ const checkRoles = role => (req, res, next) => {
   }
 };
 
+
 router.get("/admin-profile", checkRoles('ADMIN'), (req, res) => {
   Castle.find()
   .then(castlesFromDB => {
-    console.log(castlesFromDB)
     res.render("adminProfile", {castles: castlesFromDB})
   })
   .catch(err => console.log(`Something went wrong listing castles: ${err}`))
-})
+});
 
 //CREATE CASTLE (ADMIN)
 router.get("/create", checkRoles('ADMIN'), (req, res) => {
@@ -79,7 +79,7 @@ router.post("/castles/:id/delete", (req, res) => {
   
  //Get route for individul castles
  router.get("/castle/:id", (req, res) => {
-    const { id } = req.params
+    const { id } = req.params;
 
     Castle.findById(id) 
       .then((castleFromDB) => {
