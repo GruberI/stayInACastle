@@ -3,7 +3,6 @@ const router = express.Router();
 const Castle = require("../models/castle.model")
 const User = require("../models/user.model");
 
-//Middleware check roles
 const checkRoles = role => (req, res, next) => {
   if (req.session.currentUser.role === role) {
     return next();
@@ -15,13 +14,11 @@ const checkRoles = role => (req, res, next) => {
 router.get("/admin-profile", checkRoles('ADMIN'), (req, res) => {
   Castle.find()
   .then(castlesFromDB => {
-    console.log(castlesFromDB)
     res.render("adminProfile", {castles: castlesFromDB})
   })
   .catch(err => console.log(`Something went wrong listing castles: ${err}`))
-})
+});
 
-//CREATE CASTLE (ADMIN)
 router.get("/create", checkRoles('ADMIN'), (req, res) => {
     res.render("castle-create")
  });
@@ -31,10 +28,9 @@ router.get("/create", checkRoles('ADMIN'), (req, res) => {
 
      Castle.create({name, country, address, image, capacity, link, description, pun, lat, lng})
      .then(() => res.redirect("/admin-profile"))
-     .catch(error => `Error with creating Castle ${error}`)
+     .catch(error => `Error with creating a castle ${error}`)
  });
 
- //Update castle (ADMIN) (POST)
  router.get("/castles/:id/edit", (req, res) => {
   const { id } = req.params;
 
@@ -45,7 +41,6 @@ router.get("/create", checkRoles('ADMIN'), (req, res) => {
   .catch(err => console.log(`Error occured while updating castle: ${err}`))
 });
 
-//Update castle (ADMIN) POST
 router.post("/castles/:id/edit", (req, res) => {
   const { id } = req.params;
   const { name, country, address, image, capacity, link, description, pun, lat, lng } = req.body; 
@@ -56,7 +51,7 @@ router.post("/castles/:id/edit", (req, res) => {
   })
   .catch(err => console.log(`Error occured while updating castle: ${err}`))
 });
-//Delete castle (ADMIN)
+
 router.post("/castles/:id/delete", (req, res) => {
     const { id } = req.params;
 
@@ -65,7 +60,6 @@ router.post("/castles/:id/delete", (req, res) => {
     .catch(err => console.log(`Error occured while deleting castle: ${err}`))
 })
 
-  //list by country
   router.get("/country", (req, res) => {
     const { country } = req.query
 
@@ -74,18 +68,17 @@ router.post("/castles/:id/delete", (req, res) => {
         res.render("country", { castlesFromDB, country })
       }
       )
-      .catch((error) => `Error while fetching countries: ${error}`);
+      .catch((error) => console.log(`Error while fetching countries: ${error}`));
   });
   
- //Get route for individul castles
  router.get("/castle/:id", (req, res) => {
-    const { id } = req.params
+    const { id } = req.params;
 
     Castle.findById(id) 
       .then((castleFromDB) => {
         res.render("castle", castleFromDB)
       })
-      .catch((error) => `Error while fetching castle: ${error}`);
+      .catch((error) => console.log(`Error while fetching castle: ${error}`));
   });
 
   router.post("/castle/:castleId/addToFavorites", (req, res) => {
@@ -100,7 +93,7 @@ router.post("/castles/:id/delete", (req, res) => {
     .then(() => {
         res.redirect('/user-profile')
     })
-    .catch((error) => `Error while adding castle to favorites: ${error}`);
+    .catch((error) => console.log(`Error while adding castle to favorites: ${error}`));
 });
 
 module.exports = router;
