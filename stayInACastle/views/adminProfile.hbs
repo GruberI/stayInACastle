@@ -1,11 +1,11 @@
 <div class="admin-main">
   <h1>Welcome to the admin page!</h1>
-        <button class="admin-btn"><a href="/create" class="admin-a">Create a New Castle</a></button>
-        <div class="admin-card-div">
-                {{#each castles }}
-                <div class="castle-card">{{> castleCard this}}</div>
-                {{/each}}
-        </div>
+  <button class="admin-btn"><a href="/create" class="admin-a">Create a New Castle</a></button>
+  <div class="admin-card-div">
+    {{#each castles }}
+    <div class="castle-card">{{> castleCard this}}</div>
+    {{/each}}
+  </div>
 </div>
 <footer class="footer">
   <div class="footer">
