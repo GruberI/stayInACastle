@@ -2,7 +2,6 @@
 
     <div class="column-left">
         <h1>{{name}}</h1>
-        {{!-- <p class="castle-address">{{address}}</p> --}}
         <img src="{{image}}" alt="castle-img" class="castle-img">
     </div>
 
@@ -32,21 +31,25 @@
 
 <input type="hidden" value="{{lat}}" id="latitude">
 <input type="hidden" value="{{lng}}" id="longitude">
-  
-    <div>   
-    <div id="map"></div>
- 
-    <script type="text/javascript" src="/javascripts/script.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWktLASO2Rw5dW-N2I70ANOi3ECiZLNzw&callback=startMap"></script>
+
+
+<div class="map-container">
+    <div class="map-div">
+        <div id="map"></div>
+
+        <script type="text/javascript" src="/javascripts/script.js"></script>
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWktLASO2Rw5dW-N2I70ANOi3ECiZLNzw&callback=startMap"></script>
     </div>
+</div>
 
 <footer>
-        <div class="footer">
-                <hr>
-                <div class="footer-text">
-                        <a href="" class="footer-a">About Us</a>
-                        <a href="" class="footer-a">Terms and Conditions</a>
-                        <a href="" class="footer-a">Contact</a>
-                </div>
+    <div class="footer">
+        <hr>
+        <div class="footer-text">
+            <a href="" class="footer-a">About Us</a>
+            <a href="" class="footer-a">Terms and Conditions</a>
+            <a href="" class="footer-a">Contact</a>
         </div>
+    </div>
 </footer>
