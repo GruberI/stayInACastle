@@ -1,4 +1,6 @@
-const { Router } = require("express");
+const {
+    Router
+} = require("express");
 const router = new Router;
 const User = require("../models/user.model");
 const bcrypt = require("bcrypt");
@@ -8,16 +10,23 @@ router.get("/signup", (req, res, next) =>
     res.render("signup"));
 
 router.get("/user-profile", (req, res) => {
-    const { _id } = req.session.currentUser
-    
+    const {
+        _id
+    } = req.session.currentUser
+
     User.findById(_id)
         .populate('favorites')
         .then(user => {
-            const { favorites } = user
-            res.render('user-profile', { favorites, userInSession: req.session.currentUser })
+            const {
+                favorites
+            } = user
+            res.render('user-profile', {
+                favorites,
+                userInSession: req.session.currentUser
+            })
         })
-        .catch( err => console.log(err))
-    });
+        .catch(err => console.log(err))
+});
 
 router.post("/signup", (req, res, next) => {
     const {
@@ -42,28 +51,28 @@ router.post("/signup", (req, res, next) => {
                 });
                 return;
             }
-        
 
-    const salt = bcrypt.genSaltSync(saltRounds);
-    const hashedPassword = bcrypt.hashSync(password, salt);
 
-    const newUser = new User({
-        username,
-        password: hashedPassword
-    });
+            const salt = bcrypt.genSaltSync(saltRounds);
+            const hashedPassword = bcrypt.hashSync(password, salt);
 
-    newUser
-        .save()
-        .then(userFromDB => {
-            req.session.currentUser = userFromDB;
-            res.redirect("/user-profile")
+            const newUser = new User({
+                username,
+                password: hashedPassword
+            });
+
+            newUser
+                .save()
+                .then(userFromDB => {
+                    req.session.currentUser = userFromDB;
+                    res.redirect("/user-profile")
+                })
+                .catch(err => next(err));
         })
-        .catch(err => next(err));
-}) 
-.catch(error => next(error));
+        .catch(error => next(error));
 });
 
-router.get('/login', (req, res) => 
+router.get('/login', (req, res) =>
     res.render('login')
 );
 
@@ -92,10 +101,12 @@ router.post("/login", (req, res, next) => {
             } else if (bcrypt.compareSync(password, user.password)) {
                 req.session.currentUser = user;
 
-                if(req.session.currentUser.role === "ADMIN"){
+                if (req.session.currentUser.role === "ADMIN") {
                     res.redirect("/admin-profile")
-                }else{res.redirect('/user-profile');}
-                
+                } else {
+                    res.redirect('/user-profile');
+                }
+
             } else {
                 res.render('login', {
                     errorMessage: 'Incorrect password.'
@@ -108,6 +119,6 @@ router.post("/login", (req, res, next) => {
 router.get('/logout', (req, res) => {
     req.session.destroy();
     res.redirect('/');
-  });
+});
 
 module.exports = router;
