@@ -1,0 +1,55 @@
+<div class="castle-div">
+
+    <div class="column-left">
+        <h1>{{name}}</h1>
+        <img src="{{image}}" alt="castle-img" class="castle-img">
+    </div>
+
+    <div class="column-right">
+        <div class="castle-col-right">
+
+            <div class="castle-text">
+                <div class="text-wrap-div">
+                    <div class="castle-p">
+                        <p class="title-p"><strong>About {{name}}:</strong></p>
+                        <p>{{description}}</p>
+                        <p class="title-p"><strong>Address:</strong></p>
+                        <p class="castle-address">{{address}}</p>
+                    </div>
+                    <div class="castle-btn-div">
+                        <form action="/castle/{{id}}/addToFavorites" method="POST">
+                            <button class="castle-button">Save to Favorites</button>
+                        </form>
+                        <button class="castle-button"><a href="{{link}}">Click for Booking!</a></button>
+                    </div>
+                </div>
+            </div>
+            <p class="pun"><em>"{{pun}}" - Review</em></p>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" value="{{lat}}" id="latitude">
+<input type="hidden" value="{{lng}}" id="longitude">
+
+
+<div class="map-container">
+    <div class="map-div">
+        <div id="map"></div>
+
+        <script type="text/javascript" src="/javascripts/script.js"></script>
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWktLASO2Rw5dW-N2I70ANOi3ECiZLNzw&callback=startMap"></script>
+    </div>
+</div>
+
+<footer>
+    <div class="footer">
+        <hr>
+        <div class="footer-text">
+            <a href="" class="footer-a">About Us</a>
+            <a href="" class="footer-a">Terms and Conditions</a>
+            <a href="" class="footer-a">Contact</a>
+        </div>
+    </div>
+</footer>

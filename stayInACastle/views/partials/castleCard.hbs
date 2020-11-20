@@ -1,0 +1,16 @@
+<div class="castle-card-main">
+    <div class="castle-card-sides">
+        <div class="castle-card-left">
+            <h5>{{this.name}}</h5>
+            <p>{{this.country}}</p>
+        </div>
+        <div class="castle-card-right">
+            <img src="{{this.image}}" alt="">
+        </div>
+    </div>
+    <div class="castle-card-btns">
+        <button class="edit-delete-btn"><a href="/castles/{{this._id}}/edit">Edit</a></button>
+        <form action="/castles/{{this._id}}/delete" method="POST">
+            <button class="edit-delete-btn">Delete</button></form>
+    </div>
+</div>

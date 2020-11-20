@@ -1,24 +1,40 @@
 <div class="login-page">
-    <h1>{{title}}</h1>
-    <h2>Login here:</h2>
+  <div class="login-container">
+    <h2>Log in</h2>
+    <div class="login-form-div">
+      <form action="/login" method="POST">
+        <div>
+          <label for="email">Email address</label>
+          <br>
+          <input type="email" name="username" class="login-input">
+        </div>
 
-    <form action="/login" method="POST">
-      <div>
-        <label for="email">Email:</label>
-        <input type="email" name="email">
-      </div>
+        <div>
+          <label for="password">Password</label>
+          <br>
+          <input type="password" name="password" class="login-input">
+        </div>
 
-      <div>
-        <label for="password">Password:</label>
-        <input type="password" name="password">
-      </div>
+        {{#if errorMessage}}
+        <div class="error-message">{{errorMessage}}</div>
+        {{/if}}
 
-      {{#if errorMessage}}
-      <div class="error-message">{{errorMessage}}</div>
-      {{/if}}
-
-      <div>
-        <button>Login</button>
-      </div>
-    </form>
+        <div>
+          <button class="login-btn">Log in</button>
+        </div>
+      </form>
+    </div>
   </div>
+
+</div>
+
+<footer class="index-footer">
+  <div class="footer">
+    <hr>
+    <div class="footer-text">
+      <a href="" class="footer-a">About Us</a>
+      <a href="" class="footer-a">Terms and Conditions</a>
+      <a href="" class="footer-a">Contact</a>
+    </div>
+  </div>
+</footer>

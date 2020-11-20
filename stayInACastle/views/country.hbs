@@ -1,0 +1,57 @@
+<body class="country-body">
+        <div class="country-first-div">
+
+                <h1>{{country}}</h1>
+
+                <div class="up-search-bar">
+                <div class="up-searchbar-text">
+                    <form class="up-form-user" action="/country" method="GET">
+                        {{!-- <label for="countries">Select a country:</label> --}}
+                        <select name="country" id="country-country">
+                            <option>Change Country </option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="Ireland">Ireland</option>
+                            <option value="Netherlands">Netherlands</option>
+                            <option value="France">France</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Italy">Italy</option>
+                        </select>
+                        <select name="capacity" id="country-capacity">
+                            <option>Number of Guests </option>
+                            <option value="one">1</option>
+                            <option value="two">2</option>
+                            <option value="three">3</option>
+                            <option value="four">4</option>
+                        </select>
+                        <button type="submit" class="up-search-btn">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+                <div class="country-castle-div">
+                        {{#each castlesFromDB}}
+                        <div class="castle-first-div">
+                                <img src="{{this.image}}" alt="castle-img" class="country-img">
+                                <div class="country-text">
+                                        <h5>{{this.name}}</h5>
+                                        <p>{{this.address}}</p>
+                                </div>
+
+                                <button class="country-btn"><a href="/castle/{{_id}}" id="view-castle">View {{this.name}}</a></button>
+                                </form>
+                        </div>
+                        {{/each}}
+                </div>
+</body>
+
+<footer>
+        <div class="footer">
+                <hr>
+                <div class="footer-text">
+                        <a href="" class="footer-a">About Us</a>
+                        <a href="" class="footer-a">Terms and Conditions</a>
+                        <a href="" class="footer-a">Contact</a>
+                </div>
+        </div>
+</footer>

@@ -3,8 +3,14 @@ const { Schema, model } = mongoose;
 
 const userSchema = new Schema(
     {
-      email: String,
-      passwordHash: String,
+      username: {type: String, required: true, unique: true },
+      password: {type: String, required: true },
+      favorites: [{ type: Schema.Types.ObjectId, ref: 'Castle' }],
+      role: {
+        type: String,
+        enum: ['GUEST','ADMIN'],
+        default: 'GUEST'
+      }
     },
     {
       timestamps: true,
